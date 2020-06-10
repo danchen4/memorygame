@@ -1,0 +1,54 @@
+.panel {
+  height: $panel-height;
+
+  // FUNCTIONALITY
+  perspective: 50rem; //add 'rotating' look
+  -moz-perspective: 50rem;
+  position: relative;
+
+  // height collapsed because of absolute position on children. (similiar to float, but can't be clear fixed)
+  height: $panel-height;
+
+  @include bp(phone) {
+    height: $panel-height-phone;
+  }
+
+  &__side {
+    height: $panel-height;
+    border: 1rem solid $color-white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: all 0.3s ease;
+
+    &--front {
+      background-color: $color-primary-dark;
+    }
+
+    &--back {
+      background-color: $color-grey-light-2;
+      transform: rotateY(180deg);
+    }
+
+    @include bp(phone) {
+      height: $panel-height-phone;
+    }
+  }
+
+  &__emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+
+    @include bp(phone) {
+      font-size: 5rem;
+    }
+  }
+}

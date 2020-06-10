@@ -1,31 +1,11 @@
-@import './variables';
+@import './abstracts/variables';
+@import './abstracts/mixins';
 
-@import './panel';
+@import './base/base';
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 2rem;
-}
+@import './layout';
 
-.messages {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  border: 1px solid orangered;
-  text-align: center;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 2rem;
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-  padding: 2rem;
-}
-
-.panel {
-  height: $panel-height;
-  border: 1px solid orangered;
-}
+@import './components/button';
+@import './components/panel';
+@import './components/message';
+@import './components/scoreboard';
