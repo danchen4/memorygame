@@ -1,0 +1,24 @@
+.scoreboard {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1;
+
+  @include bp(phone) {
+    font-size: 2rem;
+  }
+
+  &__rounds {
+    font-size: 4rem;
+    color: $color-secondary-light;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color-secondary-dark;
+    opacity: 1;
+    transition: all .4s ease-in;
+
+
+    @include bp(phone) {
+      font-size: 3rem;
+    }
+  }
+}
